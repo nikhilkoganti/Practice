@@ -98,6 +98,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataStructuresTests\LLTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -108,7 +109,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataStructures\DataStructures.csproj">
-      <Project>{7D07BE3E-679B-4C41-96CC-F8A5D26E303E}</Project>
+      <Project>{7d07be3e-679b-4c41-96cc-f8a5d26e303e}</Project>
       <Name>DataStructures</Name>
     </ProjectReference>
   </ItemGroup>
