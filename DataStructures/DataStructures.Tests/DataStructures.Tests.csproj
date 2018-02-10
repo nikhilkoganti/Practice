@@ -99,6 +99,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataStructuresTests\LLTest.cs" />
+    <Compile Include="DataStructuresTests\DoubleLLTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
