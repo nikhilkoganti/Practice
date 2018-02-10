@@ -8,12 +8,6 @@ namespace DataStructures.Tests.DataStructuresTests
     public class LLTest
     {
         [TestMethod]
-        public void TestMethod()
-        {
-            Assert.AreEqual(1, 1);
-        }
-
-        [TestMethod]
         public void AddingToLL()
         {
             LLInt list = new LLInt();
@@ -44,6 +38,35 @@ namespace DataStructures.Tests.DataStructuresTests
             }
         }
 
+        [TestMethod]
+        public void AddingToLLGeneric()
+        {
+            LLGeneric<int> list = new LLGeneric<int>();
+
+            list.Add(1);
+            Assert.AreEqual(list.count, 1);
+
+            list.Add(10);
+            list.Add(25);
+            list.Add(36);
+            list.Add(41);
+            Assert.AreEqual(list.count, 5);
+
+            var removingNode = list.head.next.next;
+            list.Remove(removingNode);
+            Assert.AreEqual(list.count, 4);
+
+            Assert.AreEqual(list.head.value, 1);
+            Assert.AreEqual(list.tail.value, 41);
+
+            LLGenericNode<int> node = list.head;
+            for (int i = 0; i < list.count; i++)
+            {
+                Assert.AreEqual(node.value, GetIIndexVal(i));
+                node = node.next;
+            }
+        }
+
         private int GetIIndexVal(int i)
         {
             int retVal = 0;
@@ -60,7 +83,7 @@ namespace DataStructures.Tests.DataStructuresTests
                     break;
                 case 3:
                     retVal = 41;
-                    break;
+                    break; 
             }
 
             return retVal;
