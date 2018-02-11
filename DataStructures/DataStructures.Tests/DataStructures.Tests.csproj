@@ -100,6 +100,8 @@
   <ItemGroup>
     <Compile Include="DataStructuresTests\LLTest.cs" />
     <Compile Include="DataStructuresTests\DoubleLLTest.cs" />
+    <Compile Include="DataStructuresTests\StackTest.cs" />
+    <Compile Include="DataStructuresTests\QueueTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

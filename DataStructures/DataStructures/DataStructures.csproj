@@ -245,6 +245,9 @@
     <Compile Include="DataStructures\LLGeneric.cs" />
     <Compile Include="DataStructures\LLInt.cs" />
     <Compile Include="DataStructures\LLIntNode.cs" />
+    <Compile Include="DataStructures\Node.cs" />
+    <Compile Include="DataStructures\Queue.cs" />
+    <Compile Include="DataStructures\Stack.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

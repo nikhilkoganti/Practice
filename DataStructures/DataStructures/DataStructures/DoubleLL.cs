@@ -6,22 +6,15 @@ using System.Web;
 
 namespace DataStructures.DataStructures
 {
-    public class DoubleLLNode<T>
-    {
-        public T value;
-        public DoubleLLNode<T> previous;
-        public DoubleLLNode<T> next;
-    }
-
     public class DoubleLL<T> : IEnumerable<T>
     {
-        public DoubleLLNode<T> head;
-        public DoubleLLNode<T> tail;
+        public Node<T> head;
+        public Node<T> tail;
         public int count = 0;
 
         public void AddLast(T value)
         {
-            DoubleLLNode<T> node = new DoubleLLNode<T>();
+            Node<T> node = new Node<T>();
             node.value = value;
 
             if (head == null)
@@ -37,7 +30,7 @@ namespace DataStructures.DataStructures
             count++;
         }
 
-        public void Remove(DoubleLLNode<T> node)
+        public void Remove(Node<T> node)
         {
             if (count == 0)
             {
