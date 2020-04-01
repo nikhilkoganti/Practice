@@ -12,6 +12,41 @@
 //	2				7				13				18
 //1		3		6		8		11		14		16		20
 
+public void PrintPostOrderTraversal(Node node)
+{
+	Stack<Node> s = new Stack<Node>();
+	Dictionary<Node, int> visitCount = new Dictionary<Node, int>();
+	var newLine = Environment.NewLine;
+	
+	while(s.Count != 0 || node.left != null || node.right != null)
+	{
+//		Print(node.val + newLine);
+		if(node.left != null && !visitCount.ContainsKey(node))
+		{
+//		Print("A:" + newLine);
+			visitCount[node] = 1;
+			s.Push(node);
+			node = node.left;
+		}
+		else if(node.right != null && visitCount.ContainsKey(node) && visitCount[node] < 2)
+		{
+//		Print("B:" + newLine);
+			visitCount[node] = 2;
+			s.Push(node);
+			node = node.right;
+		}
+		else
+		{
+//		Print("C:" + newLine);
+			Print(node.val + ",");
+			if(s.Count > 0)
+				node = s.Pop();
+			else
+				break;
+		}
+	}
+}
+
 void Main()
 {
 	var rootNonBST = InitializeNonBST();
@@ -39,33 +74,6 @@ void Main()
 	Print("Post Order: ");
 	PrintPostOrderTraversal(rootBST);
 	Print(newLine);
-}
-
-public void PrintPostOrderTraversal(Node node)
-{
-	Stack<Node> s = new Stack<Node>();
-	Dictionary<Node, int> visitCount = new Dictionary<Node, int>();
-	
-	while(s.Count != 0 || node.left != null || node.right != null)
-	{
-		if(node.left != null || !visitCount.ContainsKey(node))
-		{
-			visitCount[node] = 1;
-			s.Push(node);
-			node = node.left;
-		}
-		else if(node.right != null || !visitCount.ContainsKey(node) || visitCount[node] < 2)
-		{
-			visitCount[node] = 2;
-			s.Push(node);
-			node = node.right;
-		}
-		else
-		{
-			Print(node.val + ",");
-			node = s.Pop();
-		}
-	}
 }
 
 //public void PrintPostOrderTraversal(Node node)
